@@ -10,4 +10,7 @@
 
 ![image](https://github.com/user-attachments/assets/677a0fe2-e7fd-4b34-bfcb-85507717bec7)
 
-
+**notifyRecordUpdateAvailable**
+1. LDS doesn't manage data provisioned by Apex. Therefore, to refresh stale date, invoke the Apex method and then call notifyRecordUpdateAvailable(recordIds) to update the LDS cache.
+2. This function supersedes getRecordNotifyChange(recordIds).
+3. To ensure that notifyRecordUpdateAvailable() is called after the record update via Apex, use the async/await pattern or Promise chain.
