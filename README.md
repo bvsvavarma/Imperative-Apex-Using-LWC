@@ -1,4 +1,4 @@
- #c5f015 Imperative-Apex-Using-LWC
+ # Imperative-Apex-Using-LWC
 
 **Call Apex Methods Imperatively**
 
