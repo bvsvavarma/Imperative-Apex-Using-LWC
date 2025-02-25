@@ -3,12 +3,15 @@
         <div class="slds-var-p-around_small">
             <div class="slds-grid slds-gutters">
                 <div class="slds-col slds-size_1-of-3">
-                    <lightning-combobox
+                    <template lwc:if={industryPickInfo.data}>
+                        <lightning-combobox
                         label="Industry"
                         placeholder="Select Industry"
-                        options={options}
+                        options={industryPickInfo.data.values}
                         onchange={handleChange} 
+                        value={selectedIndustry}
                     ></lightning-combobox>
+                    </template>
                 </div>
                 <div class="slds-col slds-size_2-of-3">
                     <lightning-button
