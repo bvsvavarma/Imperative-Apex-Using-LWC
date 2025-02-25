@@ -18,4 +18,18 @@ public with sharing class AccountHelper {
             WITH USER_MODE
         ];
     }
+
+    // We are doing update operation on Account using Imperative Apex hence should not pass cacheable
+    @AuraEnabled
+    public static string updateTickerRecord(String recordId, String newTicker){
+        Account acc = new Account(Id = recordId, TickerSymbol = newTicker);
+        try{
+            update acc;
+            return 'Success';
+        }
+        catch(Exception ex){
+            return ex.getMessage();
+        }
+
+    }
 }
